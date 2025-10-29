@@ -1,0 +1,847 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: #0B0D17;
+  color: #FFFFFF;
+  /* Cor do texto padrão (branco) */
+  overflow-x: hidden;
+  /* Evita a barra de rolagem horizontal */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+
+/**--------------------------------------------------------**
+ **------------------------ HEADER ------------------------**
+ **--------------------------------------------------------**/
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 150px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 4.75px;
+  color: #c7c7d1;
+}
+
+p {
+  font-family: 'Barlow', sans-serif;
+  color: #c7c7d1;
+  line-height: 1.8;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0 0 55px;
+}
+
+header hr {
+  flex-grow: 1;
+  /* Estica a linha para ocupar todo espaço entre a logo e o nav */
+  margin-left: 50px;
+  /* Afasta 5 0px do logo */
+  margin-right: -30px;
+  /* Faz a linha entrar 30px para dentro do nav */
+  z-index: 10;
+  /* Traz a linha para frente */
+  border: none;
+  height: 1px;
+  background-color: rgba(173, 173, 173, 0.209);
+}
+
+header nav {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.069);
+  backdrop-filter: blur(40px);
+  padding: 0 200px 0 130px;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  /* Remove as bolinhas da lista */
+  gap: 50px;
+  /* Espaçamento entre os itens da lista */
+}
+
+header nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  /* Remove o sublinhado dos links */
+  text-transform: uppercase;
+  /* Deixa todo o texto em maiúsculas. */
+  letter-spacing: 2.7px;
+  display: block;
+  padding: 40px 0;
+  border-bottom: 3px solid transparent;
+  /* Borda invisível para o efeito de hover */
+}
+
+header nav ul li a:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.7);
+  /* Borda fica cinza no hover */
+}
+
+header nav ul li a.active {
+  border-bottom-color: rgb(255, 255, 255);
+  /* Borda fica branca e sólida */
+}
+
+header nav ul li a:not(.active):hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  /* Borda cinza no hover */
+}
+
+header nav ul li a span {
+  font-weight: 700;
+  /* Deixa o número em negrito */
+  margin-right: 8px;
+  /* Espaçamento entre o número e o texto */
+}
+
+/**----------------------------------------------------------**
+ **-------------------------- MAIN --------------------------**
+ **----------------------------------------------------------**/
+
+
+/*!------ Página Home ------!*/
+
+body.home {
+  background-image: url('./assets/home/background-home-desktop.jpg');
+}
+
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 260px 200px 100px;
+}
+
+.text-content {
+  width: 450px;
+}
+
+.text-content h1 {
+  font-size: 200px;
+  padding: 15px 0 20px 0;
+}
+
+.text-content p {
+  font-size: 18px;
+}
+
+.explore-button {
+  width: 274px;
+  height: 274px;
+  background-color: white;
+  border-radius: 50%;
+  /* Deixa o elemento perfeitamente redondo */
+  display: grid;
+  place-items: center;
+  /* Um truque moderno para centralizar perfeitamente na vertical e na horizontal */
+  font-family: 'Bellefair', serif;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #0B0D17;
+  /* Cor do texto (preto) */
+  text-decoration: none;
+  position: relative;
+  /* Necessário para o efeito de hover */
+}
+
+.explore-button::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(200, 200, 200, 0.123);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.explore-button:hover::after {
+  transform: scale(1.5)
+}
+
+
+/*!------ Página Destination ------*/
+
+/*? Layout Principal da Página Destination */
+body.destination {
+  background-image: url('./assets/destination/background-destination-desktop.jpg');
+}
+
+.destination-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 80px 10% 0;
+  gap: 80px;
+}
+
+.destination-left {
+  flex-basis: 40%;
+  /* Define que a coluna da esquerda ocupará 40% do espaço */
+  padding-left: 100px;
+}
+
+.destination-right {
+  flex-basis: 445px;
+  /* Define uma largura fixa para a coluna da direita */
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+/*? Título da página ("01 PICK YOUR DESTINATION") */
+.destination-left h2 {
+  margin-bottom: 100px;
+  white-space: nowrap;
+}
+
+.destination-left h2 span {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+  margin-right: 28px;
+}
+
+/*? Navegação dos Planetas (Moon, Mars, Europa e Titan.) */
+.destination-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+.destination-nav ul li a {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #c7c7d1;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2.35px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid transparent;
+}
+
+.destination-nav ul li a:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.destination-nav ul li a.active {
+  color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+}
+
+/*? Estilo do parágrafo de descrição */
+.destination-right p {
+  font-size: 18px;
+  line-height: 1.7;
+  flex-grow: 1;
+  color: #c7c7d1;
+}
+
+/*? Linha divisória */
+.destination-right hr {
+  margin: 50px 0 30px;
+  border-color: #383B4B;
+}
+
+/*? Bloco de informações (Distância e Tempo) */
+.destination-info {
+  display: flex;
+  gap: 80px;
+}
+
+.destination-info h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2.35px;
+  color: #c7c7d1;
+  margin-bottom: 12px;
+}
+
+p.subheading-1 {
+  font-family: 'Bellefair', serif;
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+
+/*!------ Página Crew ------*/
+
+/*? Layout Principal da Página Crew */
+body.crew {
+  background-image: url('./assets/crew/background-crew-desktop.jpg');
+}
+
+.crew-content {
+  position: relative;
+  min-height: calc(100vh - 135px);
+  padding: 0;
+}
+
+.crew-left {
+  width: 55%;
+  padding-left: 10%;
+  padding-top: 150px;
+  padding-bottom: 150px;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  /* Organiza os itens em uma coluna */
+  min-height: calc(100vh - 135px);
+  /* Ocupa a altura da página */
+  box-sizing: border-box;
+  /* Garante que o padding não quebre o layout */
+}
+
+.crew-right {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  width: 45%;
+  z-index: 1;
+}
+
+.crew-right img {
+  max-height: 85vh;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/*? Título da página ("02 MEET YOUR CREW") */
+.crew-left h2 {
+  margin-bottom: 120px;
+  /* Aumenta o espaço abaixo do título */
+  white-space: nowrap;
+  /* Garante que não quebre a linha */
+}
+
+.crew-left h2 span {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+  margin-right: 28px;
+}
+
+.crew-details {
+  flex-grow: 1;
+  /* Faz este bloco crescer e ocupar todo o espaço vago */
+}
+
+/*? Detalhes da Tripulação (Cargo, Nome, Bio) */
+.crew-details h3 {
+  /* Cargo: "Flight Engineer" */
+  font-family: 'Bellefair', serif;
+  font-weight: 400;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.crew-details h1 {
+  /* Nome: "Douglas Hurley" */
+  font-size: 56px;
+  /* Um pouco menor que o H1 da Home */
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 27px;
+}
+
+.crew-details p {
+  /* Biografia */
+  color: #c7c7d1;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 445px;
+  /* Limita a largura do texto para melhor leitura */
+}
+
+/*? Navegação dos Pontos (Bullets) */
+.crew-nav {
+  margin-top: 40px;
+  /* Um espaço fixo entre o texto e os pontos */
+}
+
+.crew-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.crew-nav ul li a {
+  display: block;
+  /* Permite definir width e height */
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.17);
+  /* Cor padrão do ponto */
+  border-radius: 50%;
+  /* Deixa o <a> redondo */
+  transition: background-color 0.3s ease;
+}
+
+.crew-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Cor no hover */
+}
+
+.crew-nav ul li a.active {
+  background-color: #FFFFFF;
+  /* Cor do ponto ativo */
+}
+
+
+/*!------ Página Technology ------*/
+
+body.tech {
+  background-image: url('./assets/technology/background-technology-desktop.jpg');
+}
+
+.tech-content {
+  padding-left: 10%;
+}
+
+.tech-content h2 {
+  padding-top: 76px;
+  white-space: nowrap;
+}
+
+.tech-content h2 span {
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.25);
+  margin-right: 28px;
+}
+
+/* O layout principal (nav, texto, imagem) */
+.tech-main-layout {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding-top: 50px;
+}
+
+/* Navegação dos números (1, 2, 3) */
+.tech-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* Organiza os números em coluna */
+  gap: 32px;
+}
+
+.tech-nav ul li a {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  font-family: 'Bellefair', serif;
+  font-size: 32px;
+  color: #FFFFFF;
+}
+
+.tech-nav ul li a:hover {
+  border-color: #FFFFFF;
+}
+
+.tech-nav ul li a.active {
+  background-color: #FFFFFF;
+  color: #0B0D17;
+}
+
+/* Detalhes do texto */
+.tech-details p.subheading-2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #c7c7d1;
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+}
+
+.tech-details h1 {
+  font-size: 56px;
+  text-transform: uppercase;
+  margin: 10px 0 20px;
+}
+
+.tech-details p.tech-bio {
+  color: #c7c7d1;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 445px;
+}
+
+/* Imagem */
+.tech-right {
+  margin-left: 14vw;
+  /* Empurra a imagem para a direita */
+}
+
+.tech-right img {
+  width: 100%;
+  max-width: 515px;
+  height: auto;
+}
+
+
+/**---------------------------------RESPONSIVIDADE---------------------------------**/
+
+/* Esconde os botões de abrir/fechar no desktop */
+.btn-hamburger,
+.btn-close {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+/*! --- Para telas de Tablet --- */
+
+/*? --- PÁGINA HOME (TABLET) --- */
+@media (max-width: 1000px) {
+  body {
+    text-align: center;
+  }
+
+  .home-content {
+    /* Muda de lado-a-lado para um em cima do outro (row -> column)*/
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza */
+    padding: 200px 50px 50px;
+  }
+
+  .text-content {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    /* Centraliza o texto */
+  }
+
+  .explore-button {
+    margin-top: 100px;
+    /* Adiciona espaço entre o texto e o botão */
+  }
+
+  /* 1. Esconde a linha e a navegação do desktop */
+  header hr {
+    display: none;
+  }
+
+  header nav {
+    display: none;
+    /* Escondido por padrão no mobile */
+  }
+
+  /* 2. Mostra o botão hamburger */
+  .btn-hamburger {
+    display: block;
+    z-index: 99;
+    /* Garante que fique na frente */
+    padding: 20px;
+  }
+
+  /* 3. Estilo do menu QUANDO ABERTO (via JS) */
+  header nav.nav-active {
+    display: block;
+    position: fixed;
+    /* Flutua sobre todo o site */
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100vh;
+    z-index: 100;
+
+    /* Re-aplica o efeito de vidro */
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40px);
+  }
+
+  /* 4. Mostra o botão de fechar quando o menu está aberto */
+  header nav.nav-active .btn-close {
+    display: block;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: auto;
+    /* Joga o 'X' para a direita */
+  }
+
+  /* 5. Transforma a lista de links (que era horizontal) */
+  header nav.nav-active ul {
+    flex-direction: column;
+    /* Empilha os links */
+    align-items: flex-start;
+    gap: 30px;
+    padding-top: 60px;
+    padding-left: 30px;
+  }
+
+  /*? --- PÁGINA DESTINATION (TABLET) --- */
+  .destination-content {
+    flex-direction: column;
+    /* Empilha as colunas */
+    align-items: center;
+    padding: 40px;
+  }
+
+  .destination-left {
+    padding: 0;
+    margin-bottom: 40px;
+  }
+
+  .destination-left h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  .destination-left img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .destination-right {
+    flex-basis: auto;
+    /* Remove a largura fixa */
+    width: 100%;
+    max-width: 570px;
+    padding-top: 0;
+  }
+
+  .destination-info {
+    justify-content: space-around;
+    /* Espalha as infos */
+  }
+
+
+  /*? --- PÁGINA CREW (TABLET) --- */
+  .crew-content {
+    flex-direction: column;
+    /* Empilha as colunas */
+    min-height: auto;
+    /* Remove o cálculo de altura */
+    padding-left: 0;
+  }
+
+  .crew-left {
+    width: 100%;
+    min-height: auto;
+    padding: 40px 40px 0;
+    /* Centraliza o texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 2;
+    /* Joga o texto para DEBAIXO da imagem */
+  }
+
+  .crew-nav {
+    position: static;
+    /* Remove o 'absolute' */
+    margin: 40px 0 0;
+    order: 1;
+    /* Joga os pontos para CIMA do texto */
+  }
+
+  .crew-details {
+    order: 2;
+    /* Garante que o texto venha por último */
+    flex-grow: 0;
+    /* Desativa o flex-grow */
+  }
+
+  .crew-right {
+    position: static;
+    /* Remove o 'absolute' */
+    width: 100%;
+    order: 1;
+    /* Joga a imagem para CIMA do texto */
+    border-bottom: 1px solid #383B4B;
+    /* Adiciona a linha do design */
+  }
+
+  .crew-right img {
+    max-height: 400px;
+    /* Limita a altura da imagem */
+    margin: 0 auto;
+    /* Centraliza a imagem */
+  }
+
+
+  /*? --- PÁGINA TECHNOLOGY (TABLET) --- */
+  .tech-content {
+    padding-left: 0;
+  }
+
+  .tech-main-layout {
+    flex-direction: column;
+    /* Empilha tudo */
+    gap: 40px;
+    padding-top: 30px;
+  }
+
+  .tech-nav {
+    order: 2;
+    /* Nav (1,2,3) fica no meio */
+  }
+
+  .tech-nav ul {
+    flex-direction: row;
+    /* Nav fica horizontal */
+  }
+
+  .tech-details {
+    order: 3;
+    /* Texto fica por último */
+    max-width: 500px;
+    padding: 0 20px;
+  }
+
+  .tech-right {
+    order: 1;
+    /* Imagem fica no topo */
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .tech-right img {
+    width: 100%;
+    /* Imagem ocupa 100% da largura */
+    max-width: none;
+    height: 310px;
+    object-fit: cover;
+    /* Garante que a imagem cubra a área */
+  }
+}
+
+
+/*! --- Para telas de Celular --- */
+
+/*? --- PÁGINA HOME (CELULAR) --- */
+@media (max-width: 500px) {
+  .home-content {
+    padding-top: 120px;
+    /* Reduz o espaçamento do topo */
+  }
+
+  .text-content h2 {
+    font-size: 16px;
+    /* Ajusta o subtítulo */
+  }
+
+  .text-content h1 {
+    font-size: 80px;
+    /* Diminui a fonte da palavra "SPACE" */
+  }
+
+  .text-content p {
+    font-size: 15px;
+    /* Ajusta o texto da descrição */
+    text-align: justify;
+  }
+
+  .explore-button {
+    width: 150px;
+    /* Diminui o botão "Explore" */
+    height: 150px;
+    font-size: 20px;
+    margin-top: 80px;
+    /* Ajusta a margem */
+  }
+
+
+  /*? --- PÁGINA DESTINATION (CELULAR) --- */
+  .destination-left h2 {
+    font-size: 16px;
+  }
+
+  .destination-right h1 {
+    font-size: 80px;
+  }
+
+  .destination-right .description {
+    text-align: justify;
+  }
+
+  .destination-left img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .destination-nav ul {
+    gap: 26px;
+    justify-content: center;
+  }
+
+  .destination-info {
+    flex-direction: column;
+    /* Empilha as infos */
+    gap: 30px;
+  }
+
+
+  /*? --- PÁGINA CREW (CELULAR) --- */
+  .crew-details h3 {
+    font-size: 16px;
+  }
+
+  .crew-left h2 {
+    font-size: 16px;
+  }
+
+  .crew-details h1 {
+    font-size: 24px;
+  }
+
+  .crew-details p {
+    text-align: justify;
+  }
+
+  .crew-right img {
+    max-height: 220px;
+  }
+
+
+  /*? --- PÁGINA TECHNOLOGY (CELULAR) --- */
+  .tech-nav ul li a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .tech-details h1 {
+    font-size: 24px;
+  }
+}
