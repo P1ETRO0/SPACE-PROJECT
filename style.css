@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #0B0D17;
+}
+
 body {
   font-family: 'Barlow Condensed', sans-serif;
   background-color: #0B0D17;
@@ -555,6 +559,15 @@ body.tech {
     /* Adiciona espaço entre o texto e o botão */
   }
 
+  header {
+    padding: 26px;
+    /* Reduz o padding geral do header para telas menores */
+    justify-content: space-between;
+    /* Garante que logo e hamburger fiquem nas pontas */
+    align-items: center;
+    /* Centraliza verticalmente */
+  }
+
   /* 1. Esconde a linha e a navegação do desktop */
   header hr {
     display: none;
@@ -570,7 +583,8 @@ body.tech {
     display: block;
     z-index: 99;
     /* Garante que fique na frente */
-    padding: 20px;
+    padding: 0;
+    margin-right: 0;
   }
 
   /* 3. Estilo do menu QUANDO ABERTO (via JS) */
