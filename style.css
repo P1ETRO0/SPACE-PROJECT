@@ -594,13 +594,15 @@ body.tech {
     /* Flutua sobre todo o site */
     top: 0;
     right: 0;
-    width: 70%;
+    max-width: 255px;
+    width: 48%;
     height: 100vh;
     z-index: 100;
 
     /* Re-aplica o efeito de vidro */
     background-color: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40px);
+    padding: 0;
   }
 
   /* 4. Mostra o botão de fechar quando o menu está aberto */
@@ -619,7 +621,7 @@ body.tech {
     align-items: flex-start;
     gap: 30px;
     padding-top: 60px;
-    padding-left: 30px;
+    padding-left: 35px;
   }
 
   /*? --- PÁGINA DESTINATION (TABLET) --- */
