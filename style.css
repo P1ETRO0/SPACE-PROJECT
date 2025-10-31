@@ -560,7 +560,7 @@ body.tech {
   }
 
   header {
-    padding: 26px;
+    padding: 24px;
     /* Reduz o padding geral do header para telas menores */
     justify-content: space-between;
     /* Garante que logo e hamburger fiquem nas pontas */
@@ -603,12 +603,13 @@ body.tech {
     background-color: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40px);
     padding: 0;
+    bottom: 0;
   }
 
   /* 4. Mostra o botão de fechar quando o menu está aberto */
   header nav.nav-active .btn-close {
     display: block;
-    padding: 20px;
+    padding: 24px;
     margin-top: 20px;
     margin-left: auto;
     /* Joga o 'X' para a direita */
@@ -620,8 +621,14 @@ body.tech {
     /* Empilha os links */
     align-items: flex-start;
     gap: 30px;
-    padding-top: 60px;
+    padding-top: 0px;
     padding-left: 35px;
+  }
+
+  header nav.nav-active ul li a {
+    /* Reseta o padding vertical gigante do desktop */
+    padding-top: 25px;
+    padding-bottom: 12px;
   }
 
   /*? --- PÁGINA DESTINATION (TABLET) --- */
